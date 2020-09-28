@@ -27,7 +27,7 @@ public class MixRecyclerAdapter extends RecyclerView.Adapter< RecyclerView.ViewH
         if(viewType == 0){
             return new LinearViewHolder(LayoutInflater.from(mContext).inflate(R.layout.layout_linear_item,parent,false));
         }else {
-            return new LinearViewHolder2(LayoutInflater.from(mContext).inflate(R.layout.layout_linear_item_2,parent,false));
+            return new LinearViewHolder2(LayoutInflater.from(mContext).inflate(R.layout.layout_mix_recycler_item,parent,false));
         }
     }
 
