@@ -21,6 +21,8 @@ EditText 继承自 TextView​
 
 ## 网络图片 | 第三方库
 
+[https://github.com/bumptech/glide](https://github.com/bumptech/glide)
+
 # ListView | Grid View
 
 > Adapter 写法
@@ -45,4 +47,8 @@ EditText 继承自 TextView​
 - 分隔线；
 - 点击事件；
 
-> # 开源库：XRecyclerView:addHeadView,addFootView,下拉刷新，上拉加载；
+## 开源库：XRecyclerView
+
+> addHeadView,addFootView,下拉刷新，上拉加载;
+
+[https://github.com/XRecyclerView/XRecyclerView](https://github.com/XRecyclerView/XRecyclerView)
