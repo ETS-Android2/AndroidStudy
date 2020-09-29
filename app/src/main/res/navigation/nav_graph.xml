@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="info.emperinter.AndroidStudy.SecondFragment"
+        android:name="info.emperinter.AndroidStudy.fragment.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/Second2Fragment"
-        android:name="info.emperinter.AndroidStudy.Second2Fragment"
+        android:name="info.emperinter.AndroidStudy.fragment.Second2Fragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second2">
 

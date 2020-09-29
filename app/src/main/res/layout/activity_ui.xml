@@ -85,6 +85,13 @@
             android:textAllCaps="false"/>
 
         <Button
+            android:id="@+id/mbtn_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Progress"
+            android:textAllCaps="false" />
+
+        <Button
             android:id="@+id/mbtn_toast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -96,6 +103,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="DiaLog"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/mbtn_custome_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CusTomeDialog"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:id="@+id/mbtn_popup_window"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PopupWindow"
             android:textAllCaps="false"/>
 
         <HorizontalScrollView

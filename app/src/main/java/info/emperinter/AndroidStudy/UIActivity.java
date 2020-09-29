@@ -25,6 +25,9 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnWebV;
     private Button mBtnToast;
     private Button mBtnDialog;
+    private Button mBtnProgress;
+    private Button mBtnCustomeDialog;
+    private Button mBtnPopUpWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,9 @@ public class UIActivity extends AppCompatActivity {
         mBtnWebV = (Button) findViewById(R.id.mbtn_webview);
         mBtnToast = (Button) findViewById(R.id.mbtn_toast);
         mBtnDialog = findViewById(R.id.mbtn_dialog);
+        mBtnProgress = findViewById(R.id.mbtn_progress);
+        mBtnCustomeDialog = findViewById(R.id.mbtn_custome_dialog);
+        mBtnPopUpWindow = findViewById(R.id.mbtn_popup_window);
         setListensers();
     }
 
@@ -68,6 +74,9 @@ public class UIActivity extends AppCompatActivity {
         mBtnWebV.setOnClickListener(onClick);
         mBtnToast.setOnClickListener(onClick);
         mBtnDialog.setOnClickListener(onClick);
+        mBtnProgress.setOnClickListener(onClick);
+        mBtnCustomeDialog.setOnClickListener(onClick);
+        mBtnPopUpWindow.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -109,6 +118,15 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.mbtn_dialog:
                     intent = new Intent(UIActivity.this, DialogActivity.class);
+                    break;
+                case R.id.mbtn_progress:
+                    intent = new Intent(UIActivity.this,ProgressActivity.class);
+                    break;
+                case R.id.mbtn_custome_dialog:
+                    intent = new Intent(UIActivity.this,CustomDialogActivity.class);
+                    break;
+                case R.id.mbtn_popup_window:
+                    intent = new Intent(UIActivity.this,PopupWindowActivity.class);
                     break;
             }
             startActivity(intent);
