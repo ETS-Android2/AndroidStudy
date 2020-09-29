@@ -13,7 +13,7 @@
         android:scaleType="fitCenter"
         android:background="@color/colorBlack"/>
     <TextView
-        android:id="@+id/tvlayout_grid_item.xml_title"
+        android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello"

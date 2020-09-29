@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="info.emperinter.study211">
+    package="info.emperinter.AndroidStudy">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,26 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MixRecyclerViewActivity"
-            android:label="@string/title_activity_mix_recycler_view"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity
-            android:name=".PuRecyclerViewActivity"
-            android:label="@string/title_activity_pu_recycler_view"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".GridRecyclerViewActivity" />
-        <activity android:name=".HorRecyclerViewActivity" />
-        <activity android:name=".LinearRecyclerViewActivity" />
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".GridViewActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".ImageViewActivity" />
-        <activity android:name=".CheckBoxAcitvity" />
-        <activity android:name=".RadioButtonActivity" />
-        <activity android:name=".EditTextActivity" />
-        <activity android:name=".ButtonActivity" />
-        <activity android:name=".TextViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +18,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DialogActivity" />
+        <activity android:name=".ToastActivity" />
+        <activity android:name=".WebViewActivity" />
+        <activity
+            android:name=".RecyclerView.MixRecyclerViewActivity"
+            android:label="@string/title_activity_mix_recycler_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RecyclerView.PuRecyclerViewActivity"
+            android:label="@string/title_activity_pu_recycler_view"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RecyclerView.GridRecyclerViewActivity" />
+        <activity android:name=".RecyclerView.MixRecyclerViewActivity$HorRecyclerViewActivity" />
+        <activity android:name=".RecyclerView.LinearRecyclerViewActivity" />
+        <activity android:name=".RecyclerView.RecyclerViewActivity" />
+        <activity android:name=".GridView.GridViewActivity" />
+        <activity android:name=".ListView.ListViewActivity" />
+        <activity android:name=".ImageViewActivity" />
+        <activity android:name=".CheckBoxAcitvity" />
+        <activity android:name=".RadioButtonActivity" />
+        <activity android:name=".EditTextActivity" />
+        <activity android:name=".ButtonActivity" />
+        <activity android:name=".TextViewActivity" />
+        <activity android:name=".UIActivity"></activity>
     </application>
 
 </manifest>
