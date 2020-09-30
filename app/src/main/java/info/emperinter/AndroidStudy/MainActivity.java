@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnUI.setOnClickListener(onClick);
     }
 
+
+    //按键监听事件
     class OnClick implements View.OnClickListener{
         @Override
         public void onClick(View v) {

@@ -10,6 +10,7 @@ import android.widget.Button;
 import info.emperinter.AndroidStudy.GridView.GridViewActivity;
 import info.emperinter.AndroidStudy.ListView.ListViewActivity;
 import info.emperinter.AndroidStudy.RecyclerView.RecyclerViewActivity;
+import info.emperinter.AndroidStudy.jump.AActivity;
 
 public class UIActivity extends AppCompatActivity {
 
@@ -28,6 +29,8 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnProgress;
     private Button mBtnCustomeDialog;
     private Button mBtnPopUpWindow;
+    private Button mBtnLifeCycle;
+    private Button mBtnJump;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress = findViewById(R.id.mbtn_progress);
         mBtnCustomeDialog = findViewById(R.id.mbtn_custome_dialog);
         mBtnPopUpWindow = findViewById(R.id.mbtn_popup_window);
+        mBtnLifeCycle = findViewById(R.id.mbtn_lifecycle);
+        mBtnJump = findViewById(R.id.mbtn_jump);
         setListensers();
     }
 
@@ -77,6 +82,8 @@ public class UIActivity extends AppCompatActivity {
         mBtnProgress.setOnClickListener(onClick);
         mBtnCustomeDialog.setOnClickListener(onClick);
         mBtnPopUpWindow.setOnClickListener(onClick);
+        mBtnLifeCycle.setOnClickListener(onClick);
+        mBtnJump.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -127,6 +134,12 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.mbtn_popup_window:
                     intent = new Intent(UIActivity.this,PopupWindowActivity.class);
+                    break;
+                case R.id.mbtn_lifecycle:
+                    intent = new Intent(UIActivity.this,LifeCycleActivity.class);
+                    break;
+                case R.id.mbtn_jump:
+                    intent = new Intent(UIActivity.this, AActivity.class);
                     break;
             }
             startActivity(intent);
