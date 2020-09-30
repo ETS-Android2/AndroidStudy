@@ -4,6 +4,8 @@
 # 参考视频
 学习的主要来源[YouTube | https://www.youtube.com/watch?v=sehxt5wbsgM&list=PLoDvOw64tSYsWvlxk9aIDOGPVrFQeHull](https://www.youtube.com/watch?v=sehxt5wbsgM&list=PLoDvOw64tSYsWvlxk9aIDOGPVrFQeHull)
 
+# util | 工具类
+
 # 布局
 
 ## LinearLayout
@@ -270,3 +272,129 @@ android:launchMode="standard"
  <category android:name="android.intent.category.LAUNCHER" />
 </intent-filter>
 ```
+
+## Activity 的生命周期
+
+> LifeCycleActivity.java
+
+![](index_files/952c8280-7b08-4a22-9a19-61736cc564a1.jpg)
+
+## Activity的跳转和数据传递
+
+> package: jump
+
+- 显式跳转和隐式跳转
+
+- Activity之间的数据传递
+
+- startActivitForResult:启动Activity,结束后返回结果
+
+### 显式跳转
+
+```java
+             //显式跳转 1
+//                Intent intent = new Intent(AActivity.this,BActivity.class);
+//                startActivity(intent);
+//
+ //显式跳转 2
+//                Intent intent = new Intent();
+//                intent.setClass(AActivity.this,BActivity.class);
+//                startActivity(intent);
+
+ //显式跳转 3
+//                Intent intent = new Intent();
+//                intent.setClassName(AActivity.this,"info.emperinter.AndroidStudy.jump.BActivity");
+//                startActivity(intent);
+
+ //显式跳转 4  Intent intent = new Intent();
+  intent.setComponent(new ComponentName(AActivity.this,"info.emperinter.AndroidStudy.jump.BActivity"));
+  startActivity(intent);
+```
+
+### intent
+
+> 摄像头、打电话、邮件等等很多与intent有关
+
+
+### Activity 数据传递
+
+```java
+startActivityForResult();//回调数据
+```
+
+### Activity 的4种启动模式(launchMod)
+
+> 在AndroidManifest.xml中修改！
+
+```xml
+<activity android:name=".jump.AActivity"
+		  android:label="A"
+		  android:launchMode="standard"/>
+```
+
+> 代码中的taskid:判断是否为同一栈，hash:判断是否为同一实例；
+
+#### Activity的android:launchMode属性
+
+- standard: 标准模式，默认 | 每启动一个Activity都会创建一个新的实例。
+
+
+> Activity是由任务栈管理的，每启动一个Activity，就会被放入栈中，按返回键，就会从栈顶移除一个Activity
+
+
+- singleTop: Task栈顶复用模式
+
+> 当要启动的目标Activity已经位于栈顶时，不会创建新的实例，会复用栈顶的Activity，并且其onNewIntent()方法会被调用；如果目标Activity不在栈顶，则跟standard一样创建新的实例。
+
+- singleTask: Task栈内复用模式
+
+> 在**同一个任务栈**中，如果要启动的目标Activity已经在**栈中(不一定在栈中)**，则会复用该Activity，并调用其onNewIntent()方法，并且该Activity上面的Activity会被**清除**；如果栈中没有，则创建新的实例。
+
+> 以上两个在同一个栈复用
+
+- singleInstance: 全局单例模式
+
+> 全局复用，不管哪个Task栈，只要存在目标Activity，就复用。每个Activity占有一个新的Task栈。
+
+> 可为多个栈。
+
+- 任务栈名称：
+```xml
+android:taskAffinity="A"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
