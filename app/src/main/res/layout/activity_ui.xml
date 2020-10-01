@@ -133,6 +133,12 @@
             android:text="Jump"
             android:textAllCaps="false"/>
 
+        <Button
+            android:id="@+id/mbtn_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fragment"
+            android:textAllCaps="false"/>
 
         <HorizontalScrollView
             android:layout_width="wrap_content"

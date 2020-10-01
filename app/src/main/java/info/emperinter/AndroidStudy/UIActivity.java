@@ -10,6 +10,8 @@ import android.widget.Button;
 import info.emperinter.AndroidStudy.GridView.GridViewActivity;
 import info.emperinter.AndroidStudy.ListView.ListViewActivity;
 import info.emperinter.AndroidStudy.RecyclerView.RecyclerViewActivity;
+import info.emperinter.AndroidStudy.fragment.AFragment;
+import info.emperinter.AndroidStudy.fragment.ContainerActivity;
 import info.emperinter.AndroidStudy.jump.AActivity;
 
 public class UIActivity extends AppCompatActivity {
@@ -31,6 +33,7 @@ public class UIActivity extends AppCompatActivity {
     private Button mBtnPopUpWindow;
     private Button mBtnLifeCycle;
     private Button mBtnJump;
+    private Button mBtnFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopUpWindow = findViewById(R.id.mbtn_popup_window);
         mBtnLifeCycle = findViewById(R.id.mbtn_lifecycle);
         mBtnJump = findViewById(R.id.mbtn_jump);
+        mBtnFragment = findViewById(R.id.mbtn_fragment);
         setListensers();
     }
 
@@ -84,6 +88,7 @@ public class UIActivity extends AppCompatActivity {
         mBtnPopUpWindow.setOnClickListener(onClick);
         mBtnLifeCycle.setOnClickListener(onClick);
         mBtnJump.setOnClickListener(onClick);
+        mBtnFragment.setOnClickListener(onClick);
     }
 
     private class OnClick implements View.OnClickListener{
@@ -140,6 +145,9 @@ public class UIActivity extends AppCompatActivity {
                     break;
                 case R.id.mbtn_jump:
                     intent = new Intent(UIActivity.this, AActivity.class);
+                    break;
+                case R.id.mbtn_fragment:
+                    intent = new Intent(UIActivity.this, ContainerActivity.class);
                     break;
             }
             startActivity(intent);

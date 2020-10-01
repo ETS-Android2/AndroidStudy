@@ -11,20 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".jump.BActivity"
-            android:label="B"
-            android:launchMode="standard">
+        <activity android:name=".fragment.ContainerActivity"></activity>
+        <activity
+            android:name=".jump.BActivity">
+<!--            android:label="B"-->
+<!--            android:launchMode="standard"-->
             <intent-filter>
                 <action android:name="info.emperinter.test.BActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".jump.AActivity"
-            android:label="A"
-            android:launchMode="singleTop"
-            android:taskAffinity="A"/>
+        <activity
+            android:name=".jump.AActivity"/>
+<!--            android:label="A"-->
+<!--            android:launchMode="singleTop"-->
+<!--            android:taskAffinity="A" />-->
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
