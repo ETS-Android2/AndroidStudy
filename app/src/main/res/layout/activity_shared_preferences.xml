@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-    <Button
-        android:id="@+id/btn_ui"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <EditText
+        android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="UI"
-        android:textAllCaps="false"/>  //按我们的标准显示大小写
+        android:hint="输入内容"/>
 
     <Button
-        android:id="@+id/btn_event"
+        android:id="@+id/btn_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="事件机制"
-        android:textAllCaps="false"/>
-
+        android:text="保存"
+        android:layout_marginTop="10dp"/>
     <Button
-        android:id="@+id/btn_handler"
+        android:id="@+id/btn_show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Handler"
-        android:textAllCaps="false"/>
+        android:text="显示"
+        android:layout_marginTop="10dp"/>
 
-    <Button
-        android:id="@+id/btn_data"
+    <TextView
+        android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="数据存储"
+        android:layout_marginTop="10dp"
         android:textAllCaps="false"/>
 
 </LinearLayout>

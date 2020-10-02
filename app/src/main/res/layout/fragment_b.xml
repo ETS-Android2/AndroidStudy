@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
@@ -11,6 +11,15 @@
         android:textSize="20sp"
         android:text="我是BFragment"
         android:textAllCaps="false"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:background="@drawable/bg_btn2"/>
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_custom_dialog"
+        android:layout_weight="1"/>
+
 
 </LinearLayout>

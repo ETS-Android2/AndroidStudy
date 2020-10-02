@@ -3,7 +3,12 @@
 
 # 参考视频
 
-学习的主要来源[YouTube | https://www.youtube.com/watch?v=sehxt5wbsgM&list=PLoDvOw64tSYsWvlxk9aIDOGPVrFQeHull](https://www.youtube.com/watch?v=sehxt5wbsgM&list=PLoDvOw64tSYsWvlxk9aIDOGPVrFQeHull)
+> 可惜没有网络,json,xml等等的教程！还有没有6教程这个有点懵圈，自己在B站上找到出处也是没有的，而且B站有多几个教程！
+
+学习的主要来源：
+- [YouTube（不全） | https://www.youtube.com/watch?v=sehxt5wbsgM&list=PLoDvOw64tSYsWvlxk9aIDOGPVrFQeHull](https://www.youtube.com/watch?v=sehxt5wbsgM&list=PLoDvOw64tSYsWvlxk9aIDOGPVrFQeHull)
+
+- [B站（较全） | https://www.bilibili.com/video/BV1Rt411e76H?p=36](https://www.bilibili.com/video/BV1Rt411e76H?p=36)
 
 # util | 工具类
 
@@ -53,7 +58,7 @@ EditText 继承自 TextView​
 - 分隔线；
 - 点击事件；
 
-> # 开源库：XRecyclerView:addHeadView,addFootView,下拉刷新，上拉加载；
+> ### 开源库：XRecyclerView:addHeadView,addFootView,下拉刷新，上拉加载；
 
 ## WebView
 
@@ -117,7 +122,7 @@ public boolean onKeyDown(int kecode,KeyEvent event){
 
 ### 执行JS代码
 
-> # 参考：[最全面总结 Android WebView与 JS 的交互方式](https://www.emperinter.info/2020/06/07/android-webview-js/)
+> ##### 参考：[最全面总结 Android WebView与 JS 的交互方式](https://www.emperinter.info/2020/06/07/android-webview-js/)
 
 ## UI组件弹出组件
 
@@ -230,7 +235,7 @@ adnroid:label="Test"
   android:supportsRtl="true"
   android:theme="@style/AppTheme.NoActionBar"
   >
-	...
+    ...
 
 </application>
 ```
@@ -329,8 +334,8 @@ startActivityForResult();//回调数据
 
 ```xml
 <activity android:name=".jump.AActivity"
-		  android:label="A"
-		  android:launchMode="standard"/>
+          android:label="A"
+          android:launchMode="standard"/>
 ```
 
 > 代码中的taskid:判断是否为同一栈，hash:判断是否为同一实例；
@@ -364,38 +369,188 @@ startActivityForResult();//回调数据
 android:taskAffinity="A"
 ```
 
+------------
 
 
 
+# Fragment  | 该教程已过时，方法已被弃用2020-10-02 10:40:14 星期五
+
+> ** 用于实现同一个Activity不同布局的切换！eg:小米运动国际版首页的切换！**
+
+- Fragment有自己的生命周期
+- 依赖于Activity
+- Fragment通过getActivit()可以获取所在的Activity；Activity通过FragmenManager的findFragmentById()或findFragmentByTag()获取Fragment
+- Fragment和Activity是多对多的关系
+
+
+## 用到的文件
+- ContainerActivity.java
+- Afragement.java
+
+### 注意
+
+```java
+//getSupportFragmentManager().beginTransaction().replace(R.id.fl_container,bFragment).commitAllowingStateLoss();
+  getFragmentManager().beginTransaction().replace(R.id.fl_container,bFragment).commitAllowingStateLoss();
+```
+
+**getFragmentManager()与getSupportFragmentManager():**
+
+- 相同：
+
+```
+/**
+     * Return the FragmentManager for interacting with fragments associated
+     * with this activity.
+     */
+```
+
+就是说通过上述两种方法获得的FragmentManager是Activity中所包含Fragment的FragmentManager。
+
+- 不同：
+getFragmentManager():是Activity中和V4包的Fragment中的方法
+getSupportFragmentManager():是FragmentActivity中的方法
+
+### 问题
+
+- Fragment中getActivity()为null的问题
+- 向Fragment传递参数
+
+
+## Fragment回退栈
+
+```java
+//按返回键不直接跳到上一个Activity，回退栈
+getFragmentManager().beginTransaction().replace(R.id.fl_container,bFragment).addToBackStack(null).commitAllowingStateLoss();
+```
+
+
+## Fragment和Activity通信
+
+> 常用两种方法：接口以及自定义类实现
+
+
+# 必须深刻理解的Android事件处理！
+
+> ** 当用户在应用界面上执行各种操作时，应用程序需要为用户的动作提供响应，这种响应的过程就是事件处理！**
+
+## 基于监听的事件处理机制
+
+### 监听三要素
+- Event Source（事件源）
+- Event(事件)
+- Event Listener(事件监听器，与事件对应)
+
+### 实现监听事件的方法 | EventActivity.java
+- 通过内部类实现
+- 通过匿名内部类实现（eg:new clicklister）
+- 通过事件源所在类实现
+- 通过外部类实现  | 不常用 (eg:MyClickListener.java)
+- 布局文件中的onClick属性（针对点击事件！）
+
+### 给同一事件源添加多个同种类型事件监听器会怎样？
+
+Answer：**系统会响应最后一个监听器**，布局和其它都添加时，布局被认为是最新监听的，所以不会执行！
+
+
+## 基于回调的事件处理机制 | EVENT.java | widget/MyButton.java
+
+### 回调机制与监听机制的区别
+- 回调机制的事件源和监听绑定在一起
+
+### 基于回调的事件传播
+
+> 先从控件本身回调，后向Activity回调！由内部向外部回调！
+
+----
+
+> ## 监听优先于回调！
+
+## 源码剖析，了解View的事件分发
+
+> 一个控件的触摸事件都是从dispatchTouchEvent往下分发的;入口方法！
+
+- dispatchTouchEvent -> setOnTouchListener->onTouchEvent；
+
+- onClick/onLongClick 来自onTouchEvent的处理；
 
 
 
+## Handler消息处理
+
+### 主要用途
+
+- 未来某时做某事
+- 线程间通信
+
+# 数据存储
+
+## SharedPreferences 轻量级存储存储
+
+### 方法
+
+- Xml文件，Key-Value形式
+
+- SharedPreferences | 读数据
+
+- SharedPreferences.Editor | 写数据
+
+```java
+mEditor.apply();//提交数据,先修改内存值,后台存储 | 异步存储,优先考虑
+//mEditor.commit();//提交数据,同步存储
+```
+
+### 文件目录
+
+- /data/data/<applicationId>（非包名）/shared_prefsd
+
+> 真机要Root权限才能看到
 
 
+## Android 存储概念
+
+### 内部存储
+
+### 外部存储
 
 
+- 公有目录
+
+获取数据：
+
+```java
+Environment.getExternalStoragePublicDirectory(int type)
+```
+
+- 私有目录
+
+## File内部存储
+
+> 利用Java的I/O流
+
+### FileOutputStream FileInputStream
 
 
+## File外部存储
+
+- 权限
+
+> 23以上(6.0),动态申请权限
+
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+```
+
+```java
+//动态请求存储权限
+ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);<
+```
+
+插卡手机
+```xml
+<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+> 模拟器上运行不了？但真机可运行!
 

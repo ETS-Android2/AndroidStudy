@@ -3,6 +3,8 @@
     package="info.emperinter.AndroidStudy">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -11,22 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragment.ContainerActivity"></activity>
-        <activity
-            android:name=".jump.BActivity">
-<!--            android:label="B"-->
-<!--            android:launchMode="standard"-->
+        <activity android:name=".datastorage.FileActivity"></activity>
+        <activity android:name=".datastorage.FileOutSideActivity"></activity>
+        <activity android:name=".datastorage.SharedPreferencesActivity" />
+        <activity android:name=".datastorage.DataStorageActivity" />
+        <activity android:name=".HandlerActivity" />
+        <activity android:name=".EventActivity" />
+        <activity android:name=".fragment.ContainerActivity" />
+        <activity android:name=".jump.BActivity">
+
+            <!-- android:label="B" -->
+            <!-- android:launchMode="standard" -->
             <intent-filter>
                 <action android:name="info.emperinter.test.BActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".jump.AActivity"/>
-<!--            android:label="A"-->
-<!--            android:launchMode="singleTop"-->
-<!--            android:taskAffinity="A" />-->
+        <activity android:name=".jump.AActivity" /> <!-- android:label="A" -->
+        <!-- android:launchMode="singleTop" -->
+        <!-- android:taskAffinity="A" /> -->
         <activity android:name=".PopupWindowActivity" />
         <activity android:name=".CustomDialogActivity" />
         <activity android:name=".ProgressActivity" />
