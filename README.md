@@ -554,3 +554,94 @@ ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EX
 
 > 模拟器上运行不了？但真机可运行!
 
+------------
+> 以下教程在B站
+
+
+# 广播
+
+- 动态和静态
+- 有序和无序
+
+## LocalBroadcastManager{动态注册}
+
+> 不一定要用广播实现，也可用OnActivityResult/StartActivityForResult实现！
+
+# 补间动画和属性动画
+
+## 补间动画
+> 并未真正改变位置，视觉欺骗！
+
+## 属性动画 | ObjectAnimaActivity
+
+- ValueAnimator
+
+- ObjectAnimator.ofFloat()
+  translationX translationY alpha rotation rotationX...
+
+
+# 附
+
+## 如何分析错误日志？
+
+- Logcat
+
+- Error
+
+> 看视频！
+
+## 按压水波纹效果
+
+- button
+
+```
+<Button
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:elevation="8dp"
+  android:background="@drawable/bg_water"
+  android:text="按压水波纹 未消除"
+  android:foreground="?selectableItemBackground"
+  android:gravity="center_horizontal"
+  android:textColor="@color/colorWhite"
+  android:textSize="18sp"
+  android:textAllCaps="false"
+  android:padding="10dp"
+  />
+
+<Button
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:elevation="8dp"
+  android:background="@drawable/bg_water"
+  android:text="按压水波纹 | 消除方框阴影"
+  android:gravity="center_horizontal"
+  android:textColor="@color/colorWhite"
+  android:textSize="18sp"
+  android:textAllCaps="false"
+  android:padding="10dp"
+  android:layout_marginTop="10dp"
+  />
+```
+
+- bg_water
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+  android:color="#22000000">
+ <item android:drawable="@drawable/bg_btn2"></item>
+</ripple>
+```
+
+- bg_btn2
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+  android:shape="rectangle">
+ <solid  android:color="#ff9900" />
+
+ <corners  android:radius="50dp"/>
+</shape>
+```

@@ -10,12 +10,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import info.emperinter.AndroidStudy.broadcast.BroadActivity;
 import info.emperinter.AndroidStudy.datastorage.DataStorageActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button mBtnUI;
-    private Button mBtnEvent,mBtnHandler,mBtnData;
+    private Button mBtnEvent,mBtnHandler,mBtnData,mBtnBroadCast,mBtnAnima;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent = findViewById(R.id.btn_event);
         mBtnHandler = findViewById(R.id.btn_handler);
         mBtnData = findViewById(R.id.btn_data);
+        mBtnBroadCast = findViewById(R.id.btn_broadcast);
+        mBtnAnima = findViewById(R.id.btn_anim);
 
         OnClick onClick = new OnClick();
 
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         mBtnEvent.setOnClickListener(onClick);
         mBtnHandler.setOnClickListener(onClick);
         mBtnData.setOnClickListener(onClick);
+        mBtnBroadCast.setOnClickListener(onClick);
+        mBtnAnima.setOnClickListener(onClick);
 
         //动态请求存储权限
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
@@ -56,6 +61,12 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.btn_data:
                     intent = new Intent(MainActivity.this, DataStorageActivity.class);
+                    break;
+                case R.id.btn_broadcast:
+                    intent = new Intent(MainActivity.this, BroadActivity.class);
+                    break;
+                case R.id.btn_anim:
+                    intent = new Intent(MainActivity.this, ObjectAnimActivity.class);
                     break;
             }
             startActivity(intent);

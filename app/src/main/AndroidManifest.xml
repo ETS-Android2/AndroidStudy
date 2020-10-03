@@ -3,8 +3,7 @@
     package="info.emperinter.AndroidStudy">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".datastorage.FileActivity"></activity>
-        <activity android:name=".datastorage.FileOutSideActivity"></activity>
+        <activity android:name=".ObjectAnimActivity"></activity>
+        <activity android:name=".broadcast.BrooadActivity2" />
+        <activity android:name=".broadcast.BroadActivity" />
+        <activity android:name=".datastorage.FileActivity" />
+        <activity android:name=".datastorage.FileOutSideActivity" />
         <activity android:name=".datastorage.SharedPreferencesActivity" />
         <activity android:name=".datastorage.DataStorageActivity" />
         <activity android:name=".HandlerActivity" />

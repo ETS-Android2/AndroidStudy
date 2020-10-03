@@ -30,5 +30,44 @@
         android:layout_height="wrap_content"
         android:text="数据存储"
         android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_broadcast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BroadCast"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_anim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="属性动画"
+        android:textAllCaps="false"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:background="@drawable/bg_water"
+        android:text="按压水波纹 未消除"
+        android:foreground="?selectableItemBackground"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:padding="10dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:background="@drawable/bg_water"
+        android:text="按压水波纹 | 消除方框阴影"
+        android:gravity="center_horizontal"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        />
 </LinearLayout>
