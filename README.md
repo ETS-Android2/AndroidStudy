@@ -1,5 +1,6 @@
 # AndroidStudy
-> Android系统学习的笔记!系统但并非详细！
+
+> Android系统学习的笔记!系统但并非详细！图片并不能直接上传到文档中，如需了解详情请访问：**[https://www.emperinter.info/2020/10/03/android-study/](https://www.emperinter.info/2020/10/03/android-study/)**
 
 # 参考视频
 
@@ -208,7 +209,7 @@ eg:TestActivity
 adnroid:label="Test"
 ```
 
-![](index_files/cde66b09-5c25-4594-81f5-05bf12e74e16.png)
+
 ![](index_files/95e8938b-08f8-4d75-8e5f-e589a6e05b71.jpg)
 
 - 取消标题栏
@@ -645,3 +646,7 @@ ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EX
  <corners  android:radius="50dp"/>
 </shape>
 ```
+
+# 最后
+
+> 这个教程仅限入门教程，有许多高深的东西需要时间的积累才能掌握。同时技术在不断更新，我们只有保持一颗学习的态度才能持续走下去！
