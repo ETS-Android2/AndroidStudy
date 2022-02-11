@@ -1,16 +1,15 @@
 package info.emperinter.AndroidStudy;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -19,8 +18,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-
-import info.emperinter.AndroidStudy.R;
 
 public class TextViewActivity extends AppCompatActivity {
     private TextView mTv4;
@@ -52,7 +49,7 @@ public class TextViewActivity extends AppCompatActivity {
                 Log.v("starting","\n\n*******************\n\n\n\n\n");
                 try{
                     request();
-                    mthings.setText(get);
+                    mthings.setText(Html.fromHtml(get,Html.FROM_HTML_MODE_COMPACT));
                 }catch (Exception ex){
                     Log.v("info:","Something Wrong !");
                 }
@@ -68,7 +65,7 @@ public class TextViewActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    String strUrl = "https://api.emperinter.info/history/?date=1月2日&token=1abff3a1d9d11568ad55d4b458c6f7fe"; // 你请求的 http 链接
+                    String strUrl = "https://api.emperinter.info/history/test.php?date=1%E6%9C%882%E6%97%A5&token=1abff3a1d9d11568ad55d4b458c6f7fe"; // 你请求的 http 链接
                     URL url = new URL(strUrl);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestMethod("GET"); // 设置请求方式为 GET

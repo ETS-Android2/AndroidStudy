@@ -1,13 +1,10 @@
 package info.emperinter.AndroidStudy;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import info.emperinter.AndroidStudy.util.ToastUtil;
 
 public class HandlerActivity extends AppCompatActivity {

@@ -1,16 +1,13 @@
 package info.emperinter.AndroidStudy;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import info.emperinter.AndroidStudy.util.ToastUtil;
 
 public class DialogActivity extends AppCompatActivity {
@@ -104,20 +101,25 @@ public class DialogActivity extends AppCompatActivity {
                     }).show();
                     break;
                 case R.id.btn_dialog5:  //自定义样式
-                    AlertDialog.Builder builder5 = new AlertDialog.Builder(DialogActivity.this);
-                    View view = LayoutInflater.from(DialogActivity.this).inflate(R.layout.layout_dialog,null);
-                    EditText eTUserName = view.findViewById(R.id.et_username);
-                    EditText eTPassWord = view.findViewById(R.id.et_password);
-                    Button btnLogin = view.findViewById(R.id.btn_login);
-                    btnLogin.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            //
-                        }
-                    });
-                    builder5.setTitle("登录").setView(view).show();
-                    break;
+                        AlertDialog.Builder builder5 = new AlertDialog.Builder(DialogActivity.this);
+                        View view = LayoutInflater.from(DialogActivity.this).inflate(R.layout.layout_dialog,null);
+                        final EditText eTUserName = view.findViewById(R.id.et_username);
+                        EditText eTPassWord = view.findViewById(R.id.et_password);
+                        Button btnLogin = view.findViewById(R.id.btn_login);
+                        final AlertDialog dialog = builder5.setTitle("登录").setView(view).show();
+                        btnLogin.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //
+                                dialog.dismiss();
+    //                            eTUserName.setText("Click !");
+                            }
+                        });
+    //                    builder5.setTitle("登录").setView(view).show();
+                        break;
             }
         }
     }
+
 }
+

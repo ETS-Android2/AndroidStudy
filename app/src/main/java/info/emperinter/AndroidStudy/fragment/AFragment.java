@@ -79,9 +79,9 @@ public class AFragment extends Fragment{
                 //按返回键上一个状态保持原样！Tag:"a"在ContainerActivity中设置;
                 Fragment fragment = getFragmentManager().findFragmentByTag("a");
                 if(fragment != null){
-                    getFragmentManager().beginTransaction().hide(fragment).add(R.id.fl_container,bFragment).addToBackStack(null).commitAllowingStateLoss();
+                    getFragmentManager().beginTransaction().hide(fragment).add(R.id.fl_container,bFragment,"b").addToBackStack(null).commitAllowingStateLoss();
                 }else {
-                    getFragmentManager().beginTransaction().replace(R.id.fl_container,bFragment).addToBackStack(null).commitAllowingStateLoss();
+                    getFragmentManager().beginTransaction().replace(R.id.fl_container,bFragment,"b").addToBackStack(null).commitAllowingStateLoss();
                 }
 
             }

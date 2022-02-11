@@ -4,15 +4,20 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/smile"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/smile"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ObjectAnimActivity"></activity>
+        <activity
+            android:name=".DynamicViewActivity"
+            android:label="@string/title_activity_dynamic_view"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ObjectAnimActivity" />
         <activity android:name=".broadcast.BrooadActivity2" />
         <activity android:name=".broadcast.BroadActivity" />
         <activity android:name=".datastorage.FileActivity" />
@@ -74,6 +79,30 @@
         <activity android:name=".TextViewActivity" />
         <activity android:name=".UIActivity" />
         <activity android:name=".LifeCycleActivity" />
+        <activity android:name=".Alarm.Alarm"/>
+        <activity android:name=".Alarm.ClockActivity"/>
+        <activity android:name=".SetTimer"/>
+        <activity android:name=".BackGround.BackGroundActivity"/>
+        <activity android:name=".BackGround.OnepxActivity"/>
+
+        <service
+                android:name=".BackGround.BackGround_StartForeGround"
+                android:enabled="true"
+                android:exported="true"
+                android:process=":BackGround_StartForeGround" />
+        <service android:name=".BackGround.BackGround_StartForeGround_WithOut_Notification_Bar"
+                 android:enabled="true"
+                 android:exported="true"
+                 android:process=":BackGround_StartForeGround_WithOut_Notification_Bar"/>
+        <service android:name=".BackGround.CancelNoticeService"
+                 android:enabled="true"
+                 android:exported="true"
+                 android:process=":CancelNoticeService"/>
+        <service android:name=".BackGround.PlayerMusicService"
+                 android:enabled="true"
+                 android:exported="true"
+                 android:process=":PlayerMusicService"/>
+
     </application>
 
 </manifest>

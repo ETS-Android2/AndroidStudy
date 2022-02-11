@@ -44,6 +44,34 @@
         android:textAllCaps="false"/>
 
     <Button
+        android:id="@+id/btn_dynamic_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dynamic View"
+        android:textAllCaps="false"/>
+
+    <Button
+            android:id="@+id/btn_alarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alarm Service"
+            android:textAllCaps="false"/>
+
+    <Button
+            android:id="@+id/btn_timer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Timer Service"
+            android:textAllCaps="false"/>
+
+    <Button
+            android:id="@+id/btn_background_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BackGround Service"
+            android:textAllCaps="false"/>
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="8dp"

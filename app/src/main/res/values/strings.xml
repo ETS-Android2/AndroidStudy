@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Study211</string>
+    <string name="app_name">AndroidStudy</string>
     <string name="tv_test">emperinter !</string>
     <string name="title_activity_pu_recycler_view">PuRecyclerViewActivity</string>
     <!-- Strings used for fragments for navigation -->
@@ -11,4 +11,6 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_mix_recycler_view">MixRecyclerViewActivity</string>
+    <string name="title_activity_dynamic_view">DynamicViewActivity</string>
+    <string name="background_startfordservice">BackGround_StartFordService</string>
 </resources>

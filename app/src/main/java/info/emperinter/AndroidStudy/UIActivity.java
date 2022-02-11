@@ -1,16 +1,13 @@
 package info.emperinter.AndroidStudy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import androidx.appcompat.app.AppCompatActivity;
 import info.emperinter.AndroidStudy.GridView.GridViewActivity;
 import info.emperinter.AndroidStudy.ListView.ListViewActivity;
 import info.emperinter.AndroidStudy.RecyclerView.RecyclerViewActivity;
-import info.emperinter.AndroidStudy.fragment.AFragment;
 import info.emperinter.AndroidStudy.fragment.ContainerActivity;
 import info.emperinter.AndroidStudy.jump.AActivity;
 
